@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Lojik Kapı Simulatoru</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Coda+Caption:800' rel='stylesheet' type='text/css'>
+		
+		
+		
+		<script src="js/menu.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/bag.js"></script>
+		<script src="js/lojikKapi.js"></script>
+		<script>
+			function onload () {
+				lojikKapi = new devre.lojikKapi.SimpleLogic(document.getElementById("drawCanvas"), document.getElementById("overlay"));
+				setTimeout(function () {loadMenu(lojikKapi)}, 300);
+				reloadmodules();
+			}
+
+			
+		</script>
+
+		
+	</head>
+	<body>
+		
+		<div id="menu" class="menu">
+			<div class="notice">
+				Lojik Kapı Simülatörü
+			</div>
+			<div class="menusection">
+				<div class="section">GİRİŞ (1/0)</div>	
+				<div title="Basılı tutarak giriş değerini değiştirebilirsiniz." id="LEVER" class="node"></div>
+				
+			</div>
+	
+			<div class="menusection">
+				<div class="section">LOJİK KAPILAR</div>
+				<div id="OR2" class="node"></div>
+				<div id="OR3" class="node"></div>
+				<div id="AND2" class="node"></div>
+				<div id="AND3" class="node"></div>
+				<div id="NOR" class="node"></div>
+				<div id="XOR" class="node"></div>
+				<div id="XNOR" class="node"></div>
+				<div id="NAND" class="node"></div>
+				<div id="NOT" class="node"></div>
+			</div>
+			
+			<div class="menusection">
+				<div class="section">ÇIKIŞ (led)</div>
+				<div id="LIGHT" class="node"></div>
+				
+			</div>
+			
+			
+		</div>
+		<div class="drawContainer">
+			<canvas id="drawCanvas" class="drawZone"></canvas>
+			<div id="overlay" class="drawZone"></div>
+		</div>	
+		<script>
+			onload();
+		</script>
+		
+		
+	</body>
+</html>
